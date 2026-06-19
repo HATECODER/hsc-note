@@ -13,6 +13,7 @@
     --accent-physics: #38bdf8;
     --accent-chemistry: #34d399;
     --accent-math: #a78bfa;
+    --accent-admission: #265c23;
     --accent-drive: #fbbc04;
     --accent-yt: #ff0000;
     --text: #e2e8f0;
@@ -112,9 +113,11 @@
   .tab[data-subject="physics"] .dot { background: var(--accent-physics); }
   .tab[data-subject="chemistry"] .dot { background: var(--accent-chemistry); }
   .tab[data-subject="math"] .dot { background: var(--accent-math); }
+  .tab[data-subject="admission"] .dot { background: var(--accent-admission); }
   .tab[data-subject="physics"].active { border-color: var(--accent-physics); color: var(--accent-physics); background: rgba(56,189,248,0.06); }
   .tab[data-subject="chemistry"].active { border-color: var(--accent-chemistry); color: var(--accent-chemistry); background: rgba(52,211,153,0.06); }
   .tab[data-subject="math"].active { border-color: var(--accent-math); color: var(--accent-math); background: rgba(167,139,250,0.06); }
+  .tab[data-subject="admission"].active { border-color: var(--accent-admission); color: var(--accent-admission); background: rgba(167,139,250,0.06); }
 
   /* ─── MAIN ─── */
   main { position:relative; z-index:10; max-width:960px; margin:0 auto; padding:32px 20px 80px; }
@@ -261,6 +264,9 @@
   <div class="tab" data-subject="math" onclick="switchTab('math')">
     <span class="dot"></span> Mathematics
   </div>
+  <div class="tab" data-subject="admission" onclick="switchTab('admission')">
+    <span class="dot"></span> Admission
+  </div>
 </div>
 
 <main id="main"></main>
@@ -276,33 +282,34 @@ const subjects = {
       {
         label: "Paper — 1",
         chapters: [
-            { title: "Physical World and Measurement", drive: "https://drive.google.com/file/d/1pcbNaa1YvDBSlbbhpTT4uVU0pE3hrhpd/view?usp=sharing", youtube: "https://youtube.com/shorts/sP0Q4u_PZGo?si=_azsxyJ60VS9L0hK" },
-            { title: "Vector", drive: "https://drive.google.com/file/d/1pcbNaa1YvDBSlbbhpTT4uVU0pE3hrhpd/view?usp=sharing", youtube: "https://youtube.com/shorts/sP0Q4u_PZGo?si=_azsxyJ60VS9L0hK" },
-            { title: "Dynamics", drive: "https://drive.google.com/file/d/1pcbNaa1YvDBSlbbhpTT4uVU0pE3hrhpd/view?usp=sharing", youtube: "https://youtube.com/shorts/sP0Q4u_PZGo?si=_azsxyJ60VS9L0hK" },
-            { title: "Newtonian Mechanics", drive: "#", youtube: "#" },
-            { title: "Work, Energy and Power", drive: "#", youtube: "#" },
-            { title: "Gravitation and Gravity", drive: "#", youtube: "#" },
-            { title: "Structural Properties of Matter", drive: "#", youtube: "#" },
-            { title: "Periodic Motion", drive: "#", youtube: "#" },
-            { title: "Waves", drive: "#", youtube: "#" },
-            { title: "Ideal Gas and Kinetic Theory of Gas", drive: "#", youtube: "#" }
+            { title: "Physical World and Measurement", drive: "https://drive.google.com/drive/folders/1wPtbGcGNW0CbuM_NEoYr5PdXmz09vnXH?usp=drive_link", youtube: "https://youtube.com/shorts/sP0Q4u_PZGo?si=_azsxyJ60VS9L0hK" },
+            { title: "Vector", drive: "https://drive.google.com/drive/folders/1pcxfEX-Y87jCEmTMUBzPV3M4ZDCtlt6V?usp=drive_link", youtube: "https://youtube.com/shorts/sP0Q4u_PZGo?si=_azsxyJ60VS9L0hK" },
+            { title: "Dynamics", drive: "https://drive.google.com/drive/folders/11XI7gHPqpzAXSo98VSCaRft4NBG9JLIA?usp=drive_link", youtube: "https://youtube.com/shorts/sP0Q4u_PZGo?si=_azsxyJ60VS9L0hK" },
+            { title: "Newtonian Mechanics", drive: "https://drive.google.com/drive/folders/1WxRYvTYFNSWFthVKj4-pHtU2VlJQMDnZ?usp=drive_link", youtube: "#" },
+            { title: "Work, Energy and Power", drive: "https://drive.google.com/drive/folders/1ts6GzEABMeVINoQmdRYDLtI9Z94wgAbw?usp=drive_link", youtube: "#" },
+            { title: "Gravitation and Gravity", drive: "https://drive.google.com/drive/folders/1h_HwIKCrNXeCl0IRyINOYKbt3u6afBR2?usp=drive_link", youtube: "#" },
+            { title: "Structural Properties of Matter", drive: "https://drive.google.com/drive/folders/1MDAE4vQXIYV4gpY_YMJOEP5dGtYw2wSn?usp=drive_link", youtube: "#" },
+            { title: "Periodic Motion", drive: "https://drive.google.com/drive/folders/1JTQ17SDXu16dEPDY6yDggSDhrmfE85Ep?usp=drive_link", youtube: "#" },
+            { title: "Waves", drive: "https://drive.google.com/drive/folders/1vkHnFvamI-KOaWdc6wcZYeBGwc8MrD8i?usp=drive_link", youtube: "#" },
+            { title: "Ideal Gas and Kinetic Theory of Gas", drive: "https://drive.google.com/drive/folders/1rnXHn4KRsyPYtghjr1ZT7MMASZbu82Fw?usp=drive_link", youtube: "#" },
+            { title: "Combined Short Note", drive: "https://drive.google.com/file/d/1_2AZO-2lrFuFarpd47Q3HuuDzQTtwz38/view?usp=drive_link", youtube: "#"}
         ]
 
       },
       {
         label: "Paper — 2",
         chapters: [
-            { title: "Thermodynamics", drive: "https://drive.google.com/file/d/1pcbNaa1YvDBSlbbhpTT4uVU0pE3hrhpd/view?usp=sharing", youtube: "https://www.youtube.com/" },
-            { title: "Electrostatics", drive: "#", youtube: "https://www.youtube.com/" },
-            { title: "Current Electricity", drive: "#", youtube: "https://www.youtube.com/" },
-            { title: "Magnetic Effects of Current and Magnetism", drive: "#", youtube: "https://www.youtube.com/" },
-            { title: "Electromagnetic Induction and Alternating Current", drive: "#", youtube: "https://www.youtube.com/" },
-            { title: "Geometrical Optics", drive: "#", youtube: "https://www.youtube.com/" },
-            { title: "Physical Optics", drive: "#", youtube: "https://www.youtube.com/" },
-            { title: "Modern Physics Introduction", drive: "#", youtube: "https://www.youtube.com/" },
-            { title: "Atomic Model and Nuclear Physics", drive: "#", youtube: "https://www.youtube.com/" },
-            { title: "Semiconductor and Electronics", drive: "#", youtube: "https://www.youtube.com/" },
-            { title: "Astronomy and Space Science", drive: "#", youtube: "https://www.youtube.com/" }
+            { title: "Thermodynamics", drive: "https://drive.google.com/drive/folders/1azXqDqU5pjKq6fQz4IYkJYKwR9Oc9fV3?usp=drive_link", youtube: "https://www.youtube.com/" },
+            { title: "Electrostatics", drive: "https://drive.google.com/drive/folders/1Jis8qLmyIBdsXffkJjWGzmZPpr7Ue2mR?usp=drive_link", youtube: "https://www.youtube.com/" },
+            { title: "Current Electricity", drive: "https://drive.google.com/drive/folders/11jAyNVMObA-8LGgWBYhJvx9I_jMeI7Dl?usp=drive_link", youtube: "https://www.youtube.com/" },
+            { title: "Magnetic Effects of Current and Magnetism", drive: "https://drive.google.com/drive/folders/1lB5OMWXVW7ELMU4210kdnQC49vTx6coH?usp=drive_link", youtube: "https://www.youtube.com/" },
+            { title: "Electromagnetic Induction and Alternating Current", drive: "https://drive.google.com/drive/folders/1nIOKT5GrMJMO7lIiebK82BdPWGUkU5gd?usp=drive_link", youtube: "https://www.youtube.com/" },
+            { title: "Geometrical Optics", drive: "https://drive.google.com/drive/folders/1UzOSJ_OlkrtSO_FOfXjaHzEpFW4c0LZa?usp=drive_link", youtube: "https://www.youtube.com/" },
+            { title: "Physical Optics", drive: "https://drive.google.com/drive/folders/10-rVALZflcOkpSSPAFNnkFA-mZIfplk9?usp=drive_link", youtube: "https://www.youtube.com/" },
+            { title: "Modern Physics Introduction", drive: "https://drive.google.com/drive/folders/10y-EUpVzYKQdP_3HtWYZ2vE85eGd89Jr?usp=drive_link", youtube: "https://www.youtube.com/" },
+            { title: "Atomic Model and Nuclear Physics", drive: "https://drive.google.com/drive/folders/1SwmXzT9IQF2ePfJUp3i6lkSnckRgXiOE?usp=drive_link", youtube: "https://www.youtube.com/" },
+            { title: "Semiconductor and Electronics", drive: "https://drive.google.com/drive/folders/1n1Kb4lGMWJJuOKScGy6-KxzCIwuqBHA-?usp=drive_link", youtube: "https://www.youtube.com/" },
+            
         ]
 
       }
@@ -326,11 +333,17 @@ const subjects = {
       {
         label: "Paper — 2",
         chapters: [
-            { title: "Environmental Chemistry", drive: "https://drive.google.com/file/d/1pcbNaa1YvDBSlbbhpTT4uVU0pE3hrhpd/view?usp=sharing", youtube: "#" },
-            { title: "Organic Chemistry", drive: "#", youtube: "#" },
-            { title: "Quantitative Chemistry", drive: "#", youtube: "#" },
-            { title: "Electrochemistry", drive: "#", youtube: "#" },
-            { title: "Analytical Chemistry", drive: "#", youtube: "#" }
+            { title: "Environmental Chemistry", drive: "https://drive.google.com/file/d/160S7sHirRS_ZuaYEyM-pjw2xDcNMRPln/view?usp=drive_link", youtube: "#" },
+            { title: "Organic Chemistry", drive: "https://drive.google.com/drive/folders/1HFhK1onKZ7qX5hxgH6BvibSxKrOzAU3N?usp=drive_link", youtube: "#" },
+            { title: "Quantitative Chemistry", drive: "https://drive.google.com/file/d/1JIyEs5Acs1ERMMNTYsawNw0wnQSGv3yN/view?usp=drive_link", youtube: "#" },
+            { title: "Electrochemistry", drive: "https://drive.google.com/file/d/1O3s2iUmmesyMi9Js0GzEb2DlQYWC-NWS/view?usp=drive_link", youtube: "#" },
+            { title: "Analytical Chemistry", drive: "https://drive.google.com/file/d/1P09ZMceqnXyRkOGZPmhMvNcFtuIp-C3u/view?usp=drive_link", youtube: "#" }
+        ]
+      },
+      {
+        label: "Paper Combined",
+        chapters: [
+            { title: "Combined Chemistry", drive: "https://drive.google.com/file/d/1cE5TZj_UeJMzsyoytIrswnQ1tuuZwh83/view?usp=drive_link", youtube: "#" },
         ]
       }
     ]
@@ -341,32 +354,48 @@ const subjects = {
       {
         label: "Paper — 1",
         chapters: [
-            { title: "Matrices and Determinants", drive: "https://drive.google.com/file/d/1pcbNaa1YvDBSlbbhpTT4uVU0pE3hrhpd/view?usp=sharing", youtube: "#" },
-            { title: "Vector", drive: "#", youtube: "#" },
-            { title: "Straight Lines", drive: "#", youtube: "#" },
-            { title: "Circle", drive: "#", youtube: "#" },
-            { title: "Permutation and Combination", drive: "#", youtube: "#" },
-            { title: "Trigonometric Ratios", drive: "#", youtube: "#" },
-            { title: "Trigonometric Ratios of Associated Angles", drive: "#", youtube: "#" },
-            { title: "Function", drive: "#", youtube: "#" },
-            { title: "Differentiation", drive: "#", youtube: "#" },
-            { title: "Integration", drive: "#", youtube: "https://youtube.com/playlist?list=PL1I48BzoAZm3_Yext20FMFP5HKx6_20Px&si=esen_CGC7yzATo54/" }
+            { title: "Matrices and Determinants", drive: "https://drive.google.com/drive/folders/11HQPGQUO4bM4MNMWf0LaOdYyuLI6EZus?usp=drive_link", youtube: "#" },
+            { title: "Vector", drive: "https://drive.google.com/drive/folders/14ETltWjBFsz1EpT8qJx4mEzkrVUefiLW?usp=drive_link", youtube: "#" },
+            { title: "Straight Lines", drive: "https://drive.google.com/drive/folders/1mwUGiI-rZv4X0PLtjH3nXnm3Pz6ZaFNp?usp=drive_link", youtube: "#" },
+            { title: "Circle", drive: "https://drive.google.com/drive/folders/1V4FEgzRXbI--khiVxa-s72krE7DaWgx2?usp=drive_link", youtube: "#" },
+            { title: "Permutation and Combination", drive: "https://drive.google.com/drive/folders/11EupyQysrNTQmewQd04qnYpxn0CEECUr?usp=drive_link", youtube: "#" },
+            { title: "Trigonometric Ratios", drive: "https://drive.google.com/drive/folders/1E_Pb2etd0NjL30mRcVjLIYCyFVnglD7B?usp=drive_link", youtube: "#" },
+            { title: "Trigonometric Ratios of Associated Angles", drive: "https://drive.google.com/drive/folders/1WTZI3xcJ-gsazDYhtHObfnBrmxCxqeUj?usp=drive_link", youtube: "#" },
+            { title: "Function", drive: "https://drive.google.com/drive/folders/1C5lhsKV-C11GjBIJ45RcWhJCbd_lpyWx?usp=drive_link", youtube: "#" },
+            { title: "Differentiation", drive: "https://drive.google.com/drive/folders/1d4gTUJRhrQi4hPKKy6I_-bPegBTp9dKq?usp=drive_link", youtube: "#" },
+            { title: "Integration", drive: "https://drive.google.com/drive/folders/1STbtwGlDObdRUu5gNaxOpn_jG6FCmfLc?usp=drive_link", youtube: "https://youtube.com/playlist?list=PL1I48BzoAZm3_Yext20FMFP5HKx6_20Px&si=esen_CGC7yzATo54/" },
+            { title: "Combined Formula", drive: "https://drive.google.com/file/d/18UbOVjC-rDK8HDpmEAKzKosUU7CE496v/view?usp=drive_link", youtube: "#" }
         ]
 
       },
       {
         label: "Paper — 2",
         chapters: [
-            { title: "Real Number and Inequalities", drive: "#", youtube: "#" },
-            { title: "Linear Programming", drive: "#", youtube: "#" },
-            { title: "Complex Number", drive: "#", youtube: "#" },
-            { title: "Polynomial and Polynomial Equations", drive: "#", youtube: "#" },
-            { title: "Binomial Expansion", drive: "#", youtube: "#" },
-            { title: "Conics", drive: "#", youtube: "#" },
-            { title: "Inverse Trigonometry", drive: "#", youtube: "#" },
-            { title: "Statics", drive: "#", youtube: "#" },
-            { title: "Motion of Particles in a Plane", drive: "#", youtube: "#" },
-            { title: "Measures of Dispersion and Probability", drive: "#", youtube: "#" }
+            { title: "Real Number and Inequalities", drive: "https://drive.google.com/drive/folders/13CEjAmCQpdkPcOWCBiUaKDLTickW3BvZ?usp=drive_link", youtube: "#" },
+            { title: "Linear Programming", drive: "https://drive.google.com/drive/folders/1VoSh36S31Y9erw-ihK7yL342L-HFyuvB?usp=drive_link", youtube: "#" },
+            { title: "Complex Number", drive: "https://drive.google.com/drive/folders/1iDXiDVFe7Lekrptkm29VEYdxybZu6gvL?usp=drive_link", youtube: "#" },
+            { title: "Polynomial and Polynomial Equations", drive: "https://drive.google.com/drive/folders/1VllPPRcW54K-oYTFDOD_pv4Bv7963CZw?usp=drive_link", youtube: "#" },
+            { title: "Binomial Expansion", drive: "https://drive.google.com/drive/folders/1OCLukI_XfUhjB0rmJV_GGCxWw7ErDFY8?usp=drive_link", youtube: "#" },
+            { title: "Conics", drive: "https://drive.google.com/drive/folders/1MDmBDi84Yyj4KUPHJCVHHX-TsP5wuwC7?usp=drive_link", youtube: "#" },
+            { title: "Inverse Trigonometry", drive: "https://drive.google.com/drive/folders/1IsLdO1rMYePWrf5oWuy3LXcdf2PGQ1Pk?usp=drive_link", youtube: "#" },
+            { title: "Statics", drive: "https://drive.google.com/drive/folders/1oEwhdUT-sjCVL7EJLEahIJYuqdio4Q4Q?usp=drive_link", youtube: "#" },
+            { title: "Motion of Particles in a Plane", drive: "https://drive.google.com/drive/folders/1Q8h6_zbIseaGud1yYcOy8oaN7d7A3fTW?usp=drive_link", youtube: "#" },
+            { title: "Measures of Dispersion and Probability", drive: "https://drive.google.com/drive/folders/1baGlDSQ9-mjEq-dhQK_NEnQQf2uuTE8p?usp=drive_link", youtube: "#" },
+            { title: "Combined Formula", drive: "https://drive.google.com/file/d/1VJR1yJxAPhuXKbZqEfdpz-NW2OKubtlZ/view?usp=drive_link", youtube: "#" }
+        ]
+
+      }
+    ]
+  },
+  admission: {
+    color: "var(--accent-admission)",
+    papers: [
+      {
+        label: "Admission Combined",
+        chapters: [
+            { title: "Physics", drive: "https://drive.google.com/file/d/1Z7ghR_sVUn87uhw-IsDgA1wfNDfddVvo/view?usp=drive_link", youtube: "#" },
+            { title: "Chemistry", drive: "https://drive.google.com/file/d/1pa7gCJr63xVE2_Kn1e9Q6o-JX6sarO6O/view?usp=drive_link", youtube: "#" },
+            { title: "Higher Mathematics", drive: "#", youtube: "#" },
         ]
 
       }
